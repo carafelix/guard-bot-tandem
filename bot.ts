@@ -154,7 +154,7 @@ const captcha = dm.filter(async (ctx) => {
        await ctx.reply("You are admin in @grammyjs already!")
        return false
     case "creator":
-      await ctx.reply("You are admin in @grammyjs already!");
+      await ctx.reply("You are the one and only");
       return false;
     case "kicked":
       await ctx.reply("You were banned from @grammyjs already!");
