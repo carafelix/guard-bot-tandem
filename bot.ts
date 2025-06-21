@@ -151,8 +151,8 @@ const captcha = dm.filter(async (ctx) => {
   const member = await ctx.api.getChatMember("@grammyjs", ctx.from.id);
   switch (member.status) {
     case "administrator":
-       await ctx.reply("You are admin in @grammyjs already!")
-       return false
+      await ctx.reply("You are admin in @grammyjs already!");
+      return false;
     case "creator":
       await ctx.reply("You are the one and only");
       return false;
@@ -161,9 +161,13 @@ const captcha = dm.filter(async (ctx) => {
       return false;
     case "member":
       await ctx.reply("You are a member of @grammyjs already!");
-      return false
+      return false;
     case "restricted":
-      await ctx.reply(`You were ${member.is_member ? 'restricted' : 'banned' } from @grammyjs already!`);
+      await ctx.reply(
+        `You were ${
+          member.is_member ? "restricted" : "banned"
+        } from @grammyjs already!`,
+      );
       return false;
   }
   return true;
