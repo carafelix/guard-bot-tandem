@@ -151,6 +151,8 @@ const captcha = dm.filter(async (ctx) => {
   const member = await ctx.api.getChatMember("@grammyjs", ctx.from.id);
   switch (member.status) {
     case "administrator":
+       await ctx.reply("You are admin in @grammyjs already!")
+       return false
     case "creator":
       await ctx.reply("You are admin in @grammyjs already!");
       return false;
