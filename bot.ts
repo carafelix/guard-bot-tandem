@@ -163,11 +163,8 @@ const captcha = dm.filter(async (ctx) => {
       await ctx.reply("You are a member of @grammyjs already!");
       return false;
     case "restricted":
-      await ctx.reply(
-        `You were ${
-          member.is_member ? "restricted" : "banned"
-        } from @grammyjs already!`,
-      );
+      if (!member.is_member) return true;
+      await ctx.reply("You are a member of @grammyjs already, even though you are restricted!");
       return false;
   }
   return true;
